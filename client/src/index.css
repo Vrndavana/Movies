@@ -1,7 +1,13 @@
 .Umov {
+  padding: 5% 0;
   margin: 0 auto;
   width: 30%;
   align-items: center;
+  background-color: #ffffff;
+  border-radius: 4%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
@@ -30,8 +36,9 @@ body {
   position: relative;
   margin: 1rem auto;
   width:50%;
-  
 }
+
+
 
 .movie-director {
   padding: 4px 0;
@@ -66,9 +73,10 @@ body {
   padding: 5px;
 }
 .save-wrapper {
+  background-color: #fff;
   position: relative;
   width: 75%;
-  margin: 1rem auto;
+  margin: 1% auto;
 }
 .save-button {
   position: absolute;
@@ -77,6 +85,17 @@ body {
   border: 1px solid grey;
   padding: 5px 10px;
   background-color: lightseagreen;
+}
+.update-button{
+  width: 5%;
+  margin: 2% auto;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}
+.update-button:hover {
+  background-color: green;
+  color: white;
 }
 .save-button:hover {
   background-color: green;
