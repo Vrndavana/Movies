@@ -46,7 +46,8 @@ const MovieForm = (props) => { // Pt.3 - Step.1 Make MovieForm
                 props.getMovieList(res.data);
 				props.history.push(`/`);
 			})
-            .catch( err => console.log(err));
+			.catch( err => console.log(err));
+			//ClearForm
             setMovieData({
                 id: '',
                 title: '',
@@ -101,7 +102,7 @@ const MovieForm = (props) => { // Pt.3 - Step.1 Make MovieForm
 				/>
 				<div className="baseline" />
 
-				<button className="md-button form-button">Update</button>
+				<button className="md-button form-button"> Update This Movie </button>
 			</form>
 		</div>
 	);

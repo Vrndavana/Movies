@@ -4,6 +4,7 @@ import { useRouteMatch } from 'react-router-dom';
 import MovieCard from './MovieCard';
 
 function Movie(props) {
+  console.log(props);
   const [movie, setMovie] = useState(null);
   const match = useRouteMatch();
 
@@ -29,6 +30,13 @@ function Movie(props) {
     props.history.push(`/update-movie/${movie.id}`)
   };
 
+  const handleDelete = () => {
+    axios
+      .delete(`http://localhost:5000/api/movies/${movie.id}`)
+      .then(res => {console.log('Delete Log', res.data); props.getMovieList(); props.history.push('/');})
+      .catch(err => console.log(err))
+  }
+
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
@@ -38,7 +46,8 @@ function Movie(props) {
 
       <MovieCard movie={movie} />
       <div className='update-button' onClick={handleUpdate}> Update </div> 
-      <div className='save-button' onClick={saveMovie}> Save </div>
+      <div className='save-button'   onClick={saveMovie}> Save </div>
+      <div className='delete-button' onClick={handleDelete}> Delete </div>
 
     </div>
   );
